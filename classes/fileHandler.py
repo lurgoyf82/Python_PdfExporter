@@ -1,6 +1,7 @@
 import os
 import shutil
 import time
+import classes.configManager as configManager
 
 # File Handler Class
 class FileHandler:
@@ -51,8 +52,9 @@ class FileHandler:
 
         # read current progressive number from json config file
 
-        timestamp = time.strftime('%Y%m%d%H%M%S')
-        new_filename = f"{timestamp}_{filename}"
+        timestamp = time.strftime('%Y%m%d')
+
+        new_filename = f"Prog_{self.config_manager.get_current_progressive_number()}_{filename}_{timestamp}"
 
         return new_filename
 

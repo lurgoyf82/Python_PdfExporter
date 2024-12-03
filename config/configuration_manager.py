@@ -1,6 +1,5 @@
 import os
 from dotenv import load_dotenv
-from config.settings import ENV_PATH
 
 class ConfigurationManager:
     """
@@ -9,8 +8,6 @@ class ConfigurationManager:
     """
 
     def __init__(self):
-        # Load the .env file
-        load_dotenv(dotenv_path=ENV_PATH)
         # Set the base directory of the application
         self.base_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
         # Initialize configurations
